@@ -1,9 +1,7 @@
 * {
     font-family: 'Fredoka', sans-serif;
-    /* box-sizing: border-box;  */
     color: #67d20a;
     text-align: center;
-    /* background-color: #030303; */
 }
 body {
     background-color: #030303; 
@@ -11,8 +9,6 @@ body {
 .container { 
     background-color: #030303;
     margin-top: 1px;
-    /* margin-bottom: 1px; */
-    /* margin: 1px; */
     padding: 10px 0px 10px 0px;
 }
 .board {
@@ -24,11 +20,8 @@ body {
     border: 5px rgb(241, 236, 236);
 }
 .tile {
- 
     border-top: 1px solid #67d20a;
     border-left: 1px solid #67d20a;
-    border-right: 1px solid #67d20a;
-    border-bottom: 1px solid #67d20a;
     min-width: 100px;
     min-height: 100px;
     display: flex;
@@ -36,6 +29,12 @@ body {
     align-items: center;
     font-size: 500%;
     cursor: pointer;
+}
+.grid-bottom { 
+    border-bottom: 1px solid #67d20a;
+}
+.grid-right {
+    border-right: 1px solid #67d20a;
 }
 .display {
     color: #67d20a;
@@ -69,6 +68,7 @@ body {
 button { 
     width: 85px;
     height: 35px;
-    color: black
+    color: black;
+    font-weight: bold;
 }
 

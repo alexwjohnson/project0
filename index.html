@@ -16,26 +16,28 @@
             <h1>Tic Tac Toe</h1>
         </div>
         <div class="board">
-            <div class="tile">t0</div>
-            <div class="tile">t1</div>
-            <div class="tile">t2</div>
-            <div class="tile">t3</div>
-            <div class="tile">t4</div>
-            <div class="tile">t5</div>
-            <div class="tile">t6</div>
-            <div class="tile">t7</div>
-            <div class="tile">t8</div>
+            <div class="tile grid-top grid-left"></div>
+            <div class="tile grid-top"></div>
+            <div class="tile grid-top grid-right"></div>
+            <div class="tile grid-left grid-left"></div>
+            <div class="tile grid-center"></div>
+            <div class="tile grid-right"></div>
+            <div class="tile grid-bottom grid-left"></div>
+            <div class="tile grid-bottom"></div>
+            <div class="tile grid-bottom grid-right"></div>
         </div>
         <div class="show-player">
-            <h1>Player <span class="display-players-turn token-colorX">n</span> : It's your go...</h1>
+            <h1 class="the-player">Player <span class="display-players-turn token-colorX"></span> : It's your go...</h1>
         </div>
         <div class="win-lose-draw">
-            <h1 class="game-result">You Win/Lose/Draw!</h1>
+            <h1 class="game-result">Draw!</h1>
         </div>
         <div class="buttons">
             <button id="reset">reset</button>
         </div>
     </div>
 </body>
+    <script src="js/jquery.js"></script>
+    <script src="js/game.js"></script>
 </html>
 
