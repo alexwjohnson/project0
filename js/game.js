@@ -10,37 +10,40 @@ const winCombos = [                                                 // array of 
     [0,4,8],
     [2,4,6]
 ]
- let currentBoard = ['','','','','','','','',''];
-//  const for X player winning
-//  const for O player winning
-//  const for a tie
-let gameActive = true;
+let currentBoard = ['','','','','','','','',''];
 let currentPlayer = "X";  
 $('span.display-players-turn').html(currentPlayer);
 const $tiles = $('div.tile');                                       // jQuery to get all tiles
 
-// change the current player .. and display 
 const changePlayer = function () {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     $('span.display-players-turn').html(currentPlayer);
 }
 
-// helper func to announce result ? hide/display   //TO DO
-// const jQuery to display our game result  - win/lose/draw 
-
-//loop through winCombos with a completed row col or diag   //TO DO
+const gameResult = function (result) { 
+    $('.game-result').html(result);
+}
 
 const gameReset = function () {
     currentBoard = ['','','','','','','','',''];
     currentPlayer = "X";
      $('span.display-players-turn').html(currentPlayer);
+     $('.game-result').empty();
   $tiles.each(function() {
        $(this).html('');
     });
 }
-$('#reset').on('click',gameReset);              //event listener for the reset button
 
-//event listener for the tiles
+const findWinner = function () {
+    console.log('Looking for a winner...');
+
+        //test for winners here ..... 
+
+
+    let result = `It's a Draw!`;
+    gameResult(result);
+}
+
 const takeTurn = function() {
     let seltile = $tiles.index($(this));
 
@@ -52,6 +55,7 @@ const takeTurn = function() {
     $(this).html(currentPlayer);
     console.log(`the currentBoard array... ${ currentBoard }`)          //testing
     changePlayer();
-    
+    findWinner();
 }
-$('.tile').on('click', takeTurn); 
+$('.tile').on('click', takeTurn);               //event listener for a tile choice 
+$('#reset').on('click',gameReset);              //event listener for the reset button
