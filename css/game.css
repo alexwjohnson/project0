@@ -5,9 +5,19 @@
 }
 body {
     background-color: #030303; 
+    background-image: radial-gradient(
+        rgba(0, 150, 0, 0.75), black 120%
+      );
+      height: 100vh;
 }
 .container { 
     background-color: #030303;
+
+    background-image: radial-gradient(
+        rgba(0, 150, 0, 0.75), black 120%
+      );
+      height: 100vh;
+
     margin-top: 1px;
     padding: 10px 0px 10px 0px;
 }
