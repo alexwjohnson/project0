@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <!--
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=VT323&display=swap" rel="stylesheet"> 
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    
+    
+    
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="js/game.js">
 </head>
@@ -27,7 +35,7 @@
             <div class="tile grid-bottom grid-right"></div>
         </div>
         <div class="show-player">
-            <h1 class="the-player">Player <span class="display-players-turn token-colorX"></span> : It's your go...</h1>
+            <h1 class="the-player">Player <span class="display-players-turn token-colorX"></span> : It's your go...<span class="blink">|</span></h1>
         </div>
         <div class="win-lose-draw">
             <h1 class="game-result"></h1>
@@ -35,7 +43,7 @@
         <div class="buttons">
             <button id="reset">reset</button>
         </div>
-    </div>
+    </div>     
 </body>
     <script src="js/jquery.js"></script>
     <script src="js/game.js"></script>

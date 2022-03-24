@@ -1,6 +1,7 @@
 * {
-    font-family: 'Fredoka', sans-serif;
-    color: #67d20a;
+    color: white;
+    font-family: 'Courier Prime', monospace;
+    text-shadow: 0 0 5px #C8C8C8;
     text-align: center;
 }
 body {
@@ -10,6 +11,17 @@ body {
       );
       height: 100vh;
 }
+body::after {
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(black, 0.15),
+      rgba(black, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
 .container { 
     background-color: #030303;
 
@@ -37,7 +49,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 500%;
+    font-size: 300%;
     cursor: pointer;
 }
 .grid-bottom { 
@@ -63,7 +75,6 @@ body {
     color: blanchedalmond;
 }
 .buttons {
-    /* display: flex; */
     color: blanchedalmond;
     padding: 8px;
     border-radius: 8px;
@@ -81,4 +92,60 @@ button {
     color: black;
     font-weight: bold;
 }
+.blink {
+    font-weight: 100;
+    font-size: 30px;
+    color: white;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+  }
+ 
+@keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+}
+  @-moz-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  @-webkit-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  @-ms-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
+  @-o-keyframes blink {
+    from, to {
+      color: transparent;
+    }
+    50% {
+      color: white;
+    }
+  }
 
+
+      /* <h1 class="the-player">Player 
+            <span class="display-players-turn token-colorX"></span> : It's your go...
+            <span class="blink">|</span>
+        </h1> */

@@ -13,22 +13,14 @@ const winCombos = [                                                 // array of 
 
 let currentBoard = ['','','','','','','','',''];
 let currentPlayer = "X";  
+let freezeBoard = false; 
 $('span.display-players-turn').html(currentPlayer);
 const $tiles = $('div.tile');                                       // jQuery to get all tiles
-
-const changePlayer = function () {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    $('span.display-players-turn').html(currentPlayer);
-}
-
-const gameResult = function (result) { 
-    $('.game-result').html(result);
-}
 
 const gameReset = function () {
     currentBoard = ['','','','','','','','',''];
     currentPlayer = "X"; 
-    let $resetPlayerMsg = $('<h1 class="the-player">Player <span class="display-players-turn token-colorX"></span> : It\'s your go...</h1>');
+    let $resetPlayerMsg = $('<h1 class="the-player">Player <span class="display-players-turn token-colorX"></span> : It\'s your go...<span class="blink">|</span></h1>');
     $('.show-player').empty();
     $('.show-player').append($resetPlayerMsg);
     $('span.display-players-turn').html(currentPlayer);
@@ -38,16 +30,37 @@ const gameReset = function () {
     });
 }
 
+const changePlayer = function () {
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    $('span.display-players-turn').html(currentPlayer);
+}
+
+const gameResult = function (result) { 
+    // console.log(`result is .... ${ result }`);
+    if (result) {
+        console.log(`${ result }: freeze the board!`)
+        freezeBoard = true;
+        // $('.tile').prop('disabled', true);   //nbg 
+        // defect ... keep playing after win 
+    }
+    $('.game-result').html(result);
+            
+}
+
+
+
 const findWinner = function () {
     let message = 'Game Over!';
     let result;
     for (let i = 0; i < winCombos.length; i++) {
             let combo = winCombos[i];
-        if (currentBoard[combo[0]] === 'X' && currentBoard[combo[1]] === 'X' && currentBoard[combo[2]] === 'X') {
+        if (currentBoard[combo[0]] === 'X' && currentBoard[combo[1]] === 'X' 
+            && currentBoard[combo[2]] === 'X') {
            result = 'X Wins!'
             $('.the-player').html(message);
         }
-        if (currentBoard[combo[0]] === 'O' && currentBoard[combo[1]] === 'O' && currentBoard[combo[2]] === 'O') {
+        if (currentBoard[combo[0]] === 'O' && currentBoard[combo[1]] === 'O' 
+            && currentBoard[combo[2]] === 'O') {
             result = 'O Wins!'
             $('.the-player').html(message);
         }
@@ -78,5 +91,10 @@ const takeTurn = function() {
     changePlayer();
     findWinner();
 }
-$('.tile').on('click', takeTurn);               //event listener for a tile choice 
+// console.log(freezeBoard);
+// if (!freezeBoard) { 
+ $('.tile').on('click', takeTurn);               //event listener for a tile choice
+// } else {
+// $('.tile').prop('disabled', true);
+// }              
 $('#reset').on('click',gameReset);              //event listener for the reset button
