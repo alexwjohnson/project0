@@ -1,6 +1,4 @@
-
-//need a load statement as the scripts are all in the head     TO DO
-const winCombos = [                                                 // array of possible win combos
+const winCombos = [                                              
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -10,12 +8,11 @@ const winCombos = [                                                 // array of 
     [0,4,8],
     [2,4,6]
 ]
-
 let currentBoard = ['','','','','','','','',''];
 let currentPlayer = "X";  
 let freezeBoard = false; 
 $('span.display-players-turn').html(currentPlayer);
-const $tiles = $('div.tile');                                       // jQuery to get all tiles
+const $tiles = $('div.tile');              
 
 const gameReset = function () {
     currentBoard = ['','','','','','','','',''];
@@ -29,12 +26,10 @@ const gameReset = function () {
        $(this).html('');
     });
 }
-
 const changePlayer = function () {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     $('span.display-players-turn').html(currentPlayer);
 }
-
 const gameResult = function (result) { 
     // console.log(`result is .... ${ result }`);
     if (result) {
@@ -46,9 +41,6 @@ const gameResult = function (result) {
     $('.game-result').html(result);
             
 }
-
-
-
 const findWinner = function () {
     let message = 'Game Over!';
     let result;
@@ -79,7 +71,6 @@ const findWinner = function () {
         gameResult(result);
     }
 }
-
 const takeTurn = function() {
     let seltile = $tiles.index($(this));
     if (!currentBoard[seltile]) {
