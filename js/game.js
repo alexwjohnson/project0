@@ -17,6 +17,8 @@ const $tiles = $('div.tile');
 const gameReset = function () {
     currentBoard = ['','','','','','','','',''];
     currentPlayer = "X"; 
+    freezeBoard = false; 
+    $('.tile').on('click', takeTurn); 
     let $resetPlayerMsg = $('<h1 class="the-player css-typing">Player <span class="display-players-turn token-colorX"></span> : It\'s your go...<span class="blink">|</span></h1>');
     $('.show-player').empty();
     $('.show-player').append($resetPlayerMsg);
@@ -31,15 +33,10 @@ const changePlayer = function () {
     $('span.display-players-turn').html(currentPlayer);
 }
 const gameResult = function (result) { 
-    // console.log(`result is .... ${ result }`);
     if (result) {
-        console.log(`${ result }: freeze the board!`)
         freezeBoard = true;
-        // $('.tile').prop('disabled', true);   //nbg 
-        // defect ... keep playing after win 
     }
     $('.game-result').html(result);
-            
 }
 const findWinner = function () {
     let message = 'Game Over!';
@@ -81,11 +78,10 @@ const takeTurn = function() {
     $(this).html(currentPlayer);
     changePlayer();
     findWinner();
+    if (freezeBoard) {                            // unbind the tiles after a result
+        $('.board').children('.tile').unbind(); 
+    } 
 }
-// console.log(freezeBoard);
-// if (!freezeBoard) { 
- $('.tile').on('click', takeTurn);               //event listener for a tile choice
-// } else {
-// $('.tile').prop('disabled', true);
-// }              
+
+$('.tile').on('click', takeTurn);               //event listener for a tile choice   
 $('#reset').on('click',gameReset);              //event listener for the reset button
