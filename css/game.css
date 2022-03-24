@@ -102,9 +102,6 @@ button {
     -o-animation: 1s blink step-end infinite;
     animation: 1s blink step-end infinite;
   }
-
-  /*********************************************/
-  
 .css-typing {
     white-space: nowrap;
     overflow: hidden;
@@ -112,20 +109,22 @@ button {
 }
 .css-typing {     /* width: 27em; */
     width: 100%;
-    -webkit-animation: type 0.5s steps(40, end);
-    animation: type 0.5s steps(40, end);
+    -webkit-animation: type 1s steps(40, end);
+    animation: type 1s steps(40, end);
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
+
 @keyframes type {
     0% {
       width: 0;
     }
     99.9% {
-      border-right: 0.5em solid white;
+      border-right: none;
     }
     100% {
       border: none;
+ 
     }
 }
 @-webkit-keyframes type {
@@ -133,7 +132,7 @@ button {
       width: 0;
     }
     99.9% {
-      border-right: 0.5em solid white;
+      border-right: none;
     }
     100% {
       border: none;
