@@ -1,7 +1,7 @@
 * {
     color: white;
     font-family: 'Courier Prime', monospace;
-    text-shadow: 0 0 5px #C8C8C8;
+    text-shadow: 0 0 5px #c8c8c8;
     text-align: center;
 }
 body {
@@ -102,7 +102,53 @@ button {
     -o-animation: 1s blink step-end infinite;
     animation: 1s blink step-end infinite;
   }
- 
+
+  /*********************************************/
+  
+.css-typing {
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+.css-typing {     /* width: 27em; */
+    width: 100%;
+    -webkit-animation: type 0.5s steps(40, end);
+    animation: type 0.5s steps(40, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: 0.5em solid white;
+    }
+    100% {
+      border: none;
+    }
+}
+@-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: 0.5em solid white;
+    }
+    100% {
+      border: none;
+    }
+}
+.blink {
+    font-weight: 100;
+    font-size: 30px;
+    color: white;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+} 
 @keyframes blink {
     from, to {
       color: transparent;
@@ -111,41 +157,35 @@ button {
       color: white;
     }
 }
-  @-moz-keyframes blink {
+@-moz-keyframes blink {
     from, to {
       color: transparent;
     }
     50% {
       color: white;
     }
-  }
-  @-webkit-keyframes blink {
+}
+@-webkit-keyframes blink {
     from, to {
       color: transparent;
     }
     50% {
       color: white;
     }
-  }
-  @-ms-keyframes blink {
+}
+@-ms-keyframes blink {
     from, to {
       color: transparent;
     }
     50% {
       color: white;
     }
-  }
-  @-o-keyframes blink {
+}
+@-o-keyframes blink {
     from, to {
       color: transparent;
     }
     50% {
       color: white;
     }
-  }
-
-
-      /* <h1 class="the-player">Player 
-            <span class="display-players-turn token-colorX"></span> : It's your go...
-            <span class="blink">|</span>
-        </h1> */
+}

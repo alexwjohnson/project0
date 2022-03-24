@@ -20,7 +20,7 @@ const $tiles = $('div.tile');                                       // jQuery to
 const gameReset = function () {
     currentBoard = ['','','','','','','','',''];
     currentPlayer = "X"; 
-    let $resetPlayerMsg = $('<h1 class="the-player">Player <span class="display-players-turn token-colorX"></span> : It\'s your go...<span class="blink">|</span></h1>');
+    let $resetPlayerMsg = $('<h1 class="the-player css-typing">Player <span class="display-players-turn token-colorX"></span> : It\'s your go...<span class="blink">|</span></h1>');
     $('.show-player').empty();
     $('.show-player').append($resetPlayerMsg);
     $('span.display-players-turn').html(currentPlayer);
