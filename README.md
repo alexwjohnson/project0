@@ -52,15 +52,14 @@ _findWinner()_
 
 * Called by takeTurn() 
 * Iterates through constant 'winCombos' which is a nested array of all possible winning combinations : rows, cols and diagonals
-* Each wining combo istested against the state of the 'currentGame' array 
-to determine who hhas won. 
-* Returns draw if the 'currentGame' array is fully ppulated bu no winning combo is found.
+* Each winning combo is tested against the state of the 'currentGame' array to determine who, if anyone, has won. 
+* Returns a 'draw' if the 'currentGame' array is fully populated but no winning combo has been found.
 * A win, lose or draw result, when found, is passed in as an argument to helper function 'gameResult()'. 
 
 _gameResult(result)_
 * Helper function for findWinner(). 
 * Takes an argument of a win/lose/draw string.
-* The function will render who has won, or a draw, and tha the game is over back to the UI. 
+* The function will render who has won, or a draw, and that the game is over back to the UI. 
 
 
 
@@ -88,7 +87,7 @@ let currentBoard = ['','','','','','','','',''];
 ```
 
 ```
-// default the player to 'X' for the first move of a given game.
+// defaults the player to 'X' for the first move of a given game.
 
 let currentPlayer = "X";  
 ```
